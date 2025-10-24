@@ -51,21 +51,15 @@ export default function Welcome() {
   const currentSlideData = slides[currentSlide];
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex flex-col items-center justify-center relative">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex flex-col items-center justify-center">
       {/* Main content */}
       <div className="flex flex-col items-center justify-center text-center px-6 space-y-8">
         {/* Logo */}
-        <div 
-          className="transition-all duration-1000 ease-out"
-          style={{
-            transform: `scale(${currentSlide === 0 ? 1.2 : 1})`,
-            opacity: 1
-          }}
-        >
+        <div className="transition-all duration-1000 ease-out">
           <img 
             src="/mix-logo.png" 
             alt="MIX Logo" 
-            className={`animate-pulse ${currentSlide === 0 ? 'w-32 h-32' : 'w-20 h-20'} object-contain`}
+            className={`${currentSlide === 0 ? 'w-32 h-32' : 'w-20 h-20'} object-contain`}
           />
         </div>
 
@@ -76,7 +70,7 @@ export default function Welcome() {
           </div>
         )}
 
-        {/* Progress indicators - BETWEEN icon and text (fixed position) */}
+        {/* Progress indicators */}
         <div className="flex space-x-3 my-6">
           {slides.map((_, index) => (
             <div

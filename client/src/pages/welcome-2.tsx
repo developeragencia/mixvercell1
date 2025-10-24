@@ -7,11 +7,8 @@ export default function Welcome2() {
   const [, setLocation] = useLocation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex flex-col items-center justify-between p-8 py-16 relative overflow-hidden">
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
-      <div className="w-full flex justify-center items-center z-10 relative pt-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex flex-col items-center justify-between p-8 py-16">
+      <div className="w-full flex justify-center items-center pt-4">
         <img 
           src={mixLogo} 
           alt="MIX" 
@@ -20,23 +17,21 @@ export default function Welcome2() {
         />
         <button
           onClick={() => setLocation('/login')}
-          className="absolute right-0 text-white/90 hover:text-white text-base font-medium"
+          className="absolute right-8 text-white/90 hover:text-white text-base font-medium"
           data-testid="button-skip"
         >
           Pular
         </button>
       </div>
 
-      <div className="flex-1 flex items-center justify-center w-full max-w-sm z-10 px-4">
-        <div className="w-full bg-white/10 backdrop-blur-xl rounded-[3rem] p-8 shadow-2xl border border-white/20 relative">
-          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-white/30 rounded-full"></div>
-          
+      <div className="flex-1 flex items-center justify-center w-full max-w-sm px-4">
+        <div className="w-full bg-white/10 backdrop-blur-xl rounded-[3rem] p-8 shadow-2xl border border-white/20">
           <div className="flex flex-col items-center text-center space-y-6">
             <div className="relative">
               <div className="w-28 h-28 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center shadow-2xl">
                 <Heart className="w-14 h-14 text-white" fill="white" strokeWidth={2} />
               </div>
-              <div className="absolute -top-2 -right-2 w-11 h-11 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+              <div className="absolute -top-2 -right-2 w-11 h-11 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl">
                 <Sparkles className="w-5 h-5 text-white" strokeWidth={2.5} />
               </div>
             </div>
@@ -52,7 +47,7 @@ export default function Welcome2() {
         </div>
       </div>
 
-      <div className="w-full max-w-md space-y-6 z-10">
+      <div className="w-full max-w-md space-y-6">
         <Button
           onClick={() => setLocation('/welcome-3')}
           className="w-full h-16 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-bold rounded-full shadow-2xl text-lg"
