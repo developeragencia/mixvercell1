@@ -30,14 +30,52 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          auth: ['@react-oauth/google', 'passport'],
-          utils: ['zod', 'date-fns', 'clsx']
-        }
+          vendor: [
+            'react', 
+            'react-dom', 
+            'react-hook-form',
+            '@tanstack/react-query'
+          ],
+          ui: [
+            '@radix-ui/react-dialog', 
+            '@radix-ui/react-dropdown-menu', 
+            '@radix-ui/react-toast',
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-alert-dialog',
+            '@radix-ui/react-avatar',
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-label',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+            'lucide-react'
+          ],
+          auth: [
+            '@react-oauth/google', 
+            'passport',
+            'passport-google-oauth20',
+            'passport-facebook',
+            'passport-local'
+          ],
+          utils: [
+            'zod', 
+            'date-fns', 
+            'clsx',
+            'tailwind-merge',
+            'class-variance-authority'
+          ],
+          data: [
+            'drizzle-orm',
+            '@neondatabase/serverless'
+          ]
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 2000,
+    target: 'esnext',
+    minify: 'esbuild'
   },
   server: {
     fs: {
